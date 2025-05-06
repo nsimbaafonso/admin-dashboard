@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Search, Eye } from "lucide-react";
+import AddButton from "../../components/common/AddButton";
+import FullScreenModal from "../../components/common/FullScreenModal";
 
 const orderData = [
 	{ id: "PEDIDO001", customer: "John Doe", total: 235.4, status: "Entregado", date: "01-07-2025" },
@@ -24,6 +26,14 @@ const OrdersTable = () => {
 			(order) => order.id.toLowerCase().includes(term) || order.customer.toLowerCase().includes(term)
 		);
 		setFilteredOrders(filtered);
+	};
+
+	const [showModal, setShowModal] = useState(false);
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		// lógica de envio
+		setShowModal(false);
 	};
 
 	return (
@@ -107,7 +117,7 @@ const OrdersTable = () => {
 								<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>{order.date}</td>
 								<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>
 									<button className='text-indigo-400 hover:text-indigo-300 mr-2'>
-										<Eye size={18} />
+										<Eye onClick={() => setShowModal(true)} size={18} />
 									</button>
 								</td>
 							</motion.tr>
@@ -115,6 +125,13 @@ const OrdersTable = () => {
 					</tbody>
 				</table>
 			</div>
+
+			{showModal && (
+				<FullScreenModal title="Adicionar Produto" onClose={() => setShowModal(false)}>
+					{/* Mapa aqui */}
+					
+				</FullScreenModal>
+			)}
 		</motion.div>
 	);
 };
