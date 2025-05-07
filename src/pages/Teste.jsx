@@ -8,6 +8,8 @@ function Teste() {
       <MapComponente />
     </div>
   );
+
+  
 }
 
 export default Teste;
