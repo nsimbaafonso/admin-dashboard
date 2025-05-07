@@ -9,6 +9,7 @@ import SalesPage from "./pages/SalesPage";
 import OrdersPage from "./pages/OrdersPage";
 import AnalyticsPage from "./pages/AnalyticsPage";
 import SettingsPage from "./pages/SettingsPage";
+import Teste from "./pages/Teste";
 
 function App() {
 	return (
@@ -31,6 +32,7 @@ function App() {
 				<Route path='/pedidos' element={<OrdersPage />} />
 				<Route path='/analises' element={<AnalyticsPage />} />
 				<Route path='/definicoes' element={<SettingsPage />} />
+				<Route path='/teste' element={Teste />} />
 			</Routes>
 		</div>
 	);
