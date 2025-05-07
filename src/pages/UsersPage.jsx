@@ -16,10 +16,10 @@ const userStats = {
 };
 
 const UsersPage = () => {
-    useDocumentTitle("Usuários | Dashboard");
+    useDocumentTitle("Clientes | Dashboard");
 	return (
 		<div className='flex-1 overflow-auto relative z-10'>
-			<Header title='Usuários' />
+			<Header title='Clientes' />
 
 			<main className='max-w-7xl mx-auto py-6 px-4 lg:px-8'>
 				{/* STATS */}
@@ -30,14 +30,14 @@ const UsersPage = () => {
 					transition={{ duration: 1 }}
 				>
 					<StatCard
-						name='Total de Usuários'
+						name='Total de Clientes'
 						icon={UsersIcon}
 						value={userStats.totalUsers.toLocaleString()}
 						color='#6366F1'
 					/>
-					<StatCard name='Novos Usuários Hoje' icon={UserPlus} value={userStats.newUsersToday} color='#10B981' />
+					<StatCard name='Novos Clientes Hoje' icon={UserPlus} value={userStats.newUsersToday} color='#10B981' />
 					<StatCard
-						name='Usuários Ativos'
+						name='Clientes Ativos'
 						icon={UserCheck}
 						value={userStats.activeUsers.toLocaleString()}
 						color='#F59E0B'

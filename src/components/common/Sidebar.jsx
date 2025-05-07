@@ -11,7 +11,7 @@ const SIDEBAR_ITEMS = [
 		href: "/",
 	},
 	{ name: "Produtos", icon: ShoppingBag, color: "#8B5CF6", href: "/produtos" },
-	{ name: "Usuários", icon: Users, color: "#EC4899", href: "/usuarios" },
+	{ name: "Clientes", icon: Users, color: "#EC4899", href: "/clientes" },
 	{ name: "Vendas", icon: DollarSign, color: "#10B981", href: "/vendas" },
 	{ name: "Pedidos", icon: ShoppingCart, color: "#F59E0B", href: "/pedidos" },
 	{ name: "Análises", icon: TrendingUp, color: "#3B82F6", href: "/analises" },

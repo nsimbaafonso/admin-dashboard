@@ -7,7 +7,7 @@ const userData = [
 	{ id: 2, name: "Jane Smith", email: "jane@example.com", role: "Admin", status: "Ativo" },
 	{ id: 3, name: "Bob Johnson", email: "bob@example.com", role: "Cliente", status: "Inativo" },
 	{ id: 4, name: "Alice Brown", email: "alice@example.com", role: "Cliente", status: "Ativo" },
-	{ id: 5, name: "Charlie Wilson", email: "charlie@example.com", role: "Moderador", status: "Ativo" },
+	{ id: 5, name: "Charlie Wilson", email: "charlie@example.com", role: "Cliente", status: "Ativo" },
 ];
 
 const UsersTable = () => {
@@ -31,11 +31,11 @@ const UsersTable = () => {
 			transition={{ delay: 0.2 }}
 		>
 			<div className='flex justify-between items-center mb-6'>
-				<h2 className='text-xl font-semibold text-gray-100'>Usuários</h2>
+				<h2 className='text-xl font-semibold text-gray-100'>Clientes</h2>
 				<div className='relative'>
 					<input
 						type='text'
-						placeholder='Buscar usuários...'
+						placeholder='Buscar clientes...'
 						className='bg-gray-700 text-white placeholder-gray-400 rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500'
 						value={searchTerm}
 						onChange={handleSearch}

@@ -2,13 +2,13 @@ import { motion } from "framer-motion";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 
 const dailySalesData = [
-	{ name: "Seg", sales: 1000 },
-	{ name: "Ter", sales: 1200 },
-	{ name: "Qua", sales: 900 },
-	{ name: "Qui", sales: 1100 },
-	{ name: "Sex", sales: 1300 },
-	{ name: "Sab", sales: 1600 },
-	{ name: "Dom", sales: 1400 },
+	{ name: "Seg", vendas: 1000 },
+	{ name: "Ter", vendas: 1200 },
+	{ name: "Qua", vendas: 900 },
+	{ name: "Qui", vendas: 1100 },
+	{ name: "Sex", vendas: 1300 },
+	{ name: "Sab", vendas: 1600 },
+	{ name: "Dom", vendas: 1400 },
 ];
 
 const DailySalesTrend = () => {
@@ -34,7 +34,7 @@ const DailySalesTrend = () => {
 							}}
 							itemStyle={{ color: "#E5E7EB" }}
 						/>
-						<Bar dataKey='sales' fill='#10B981' />
+						<Bar dataKey='vendas' fill='#10B981' />
 					</BarChart>
 				</ResponsiveContainer>
 			</div>
