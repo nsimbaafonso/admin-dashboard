@@ -1,11 +1,11 @@
 import React from 'react';
-import MapComponent from "../components/map/MapComponent";
+import MapComponent from "../components/map/MapComponente";
 
 function Teste() {
   return (
     <div>
       <h1>Meu Mapa do Google</h1>
-      <MapComponent />
+      <MapComponente />
     </div>
   );
 }
