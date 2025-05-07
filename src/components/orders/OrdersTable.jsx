@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Search, Eye } from "lucide-react";
-import AddButton from "../../components/common/AddButton";
 import FullScreenModal from "../../components/common/FullScreenModal";
+import MapComponent from "../../components/map/MapComponent";
 
 const orderData = [
 	{ id: "PEDIDO001", customer: "John Doe", total: 235.4, status: "Entregado", date: "01-07-2025" },
@@ -127,9 +127,9 @@ const OrdersTable = () => {
 			</div>
 
 			{showModal && (
-				<FullScreenModal title="Adicionar Produto" onClose={() => setShowModal(false)}>
+				<FullScreenModal title="Mapa de Acompanhamento" onClose={() => setShowModal(false)}>
 					{/* Mapa aqui */}
-					
+					<MapComponent />
 				</FullScreenModal>
 			)}
 		</motion.div>
