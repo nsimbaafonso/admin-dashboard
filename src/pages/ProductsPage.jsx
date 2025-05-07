@@ -8,6 +8,7 @@ import FullScreenModal from "../components/common/FullScreenModal";
 import CategoryDistributionChart from "../components/overview/CategoryDistributionChart";
 import SalesTrendChart from "../components/products/SalesTrendChart";
 import ProductsTable from "../components/products/ProductsTable";
+import RichText from "../components/richtext/RichText";
 
 import { AlertTriangle, DollarSign, Package, TrendingUp } from "lucide-react";
 
@@ -21,6 +22,14 @@ const ProductsPage = () => {
 		// lógica de envio
 		setShowModal(false);
 	};
+
+	const [form, setForm] = useState({
+		mensagem: ""
+	  });
+	
+	  const handleEditorChange = (content) => {
+		setForm((prev) => ({ ...prev, mensagem: content }));
+	  };
 
 	return (
 		<div className='flex-1 overflow-auto relative z-10'>
@@ -93,12 +102,20 @@ const ProductsPage = () => {
 							</select>
 						</div>
 
+						{/* Editor de texto (Rich Text) */}
+						<div className="mb-6">
+							<label htmlFor="mensagem" className="block text-sm font-medium text-gray-100 mb-1">
+							Descrição do Produto
+							</label>
+							<RichText value={form.mensagem} onChange={handleEditorChange} />
+      					</div>
+
 						{/* Botão de envio */}
 						<div className="flex justify-between gap-2">
 							<button type="reset"
 								className="w-full cursor-pointer bg-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-400 transition"
 							>
-							Limpar
+								Limpar
 							</button>
 							<button type="submit"
 								className="w-full  cursor-pointer bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700 transition"
