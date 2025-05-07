@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Search, Eye } from "lucide-react";
 import FullScreenModal from "../../components/common/FullScreenModal";
-import MapComponent from "../../components/map/MapComponent";
+import MapComponents from "../../components/map/MapComponents";
 
 const orderData = [
 	{ id: "PEDIDO001", customer: "John Doe", total: 235.4, status: "Entregado", date: "01-07-2025" },
@@ -129,7 +129,7 @@ const OrdersTable = () => {
 			{showModal && (
 				<FullScreenModal title="Mapa de Acompanhamento" onClose={() => setShowModal(false)}>
 					{/* Mapa aqui */}
-					<MapComponent />
+					<MapComponents />
 				</FullScreenModal>
 			)}
 		</motion.div>
