@@ -23,7 +23,7 @@ export default function FullScreenModal({ onClose, title, children }) {
 				onClick={handleBackdropClick}
 			>
 				<motion.div
-					className="relative w-full h-full bg-gray-800 sm:rounded-lg sm:max-w-4xl sm:h-auto sm:p-6 p-4 flex flex-col justify-center items-center"
+					className="relative  w-full  h-full bg-gray-800 sm:rounded-lg sm:max-w-3xl sm:h-auto sm:p-6 p-4 flex flex-col justify-center items-center"
 					initial={{ opacity: 0, y: 50 }}
 					animate={{ opacity: 1, y: 0 }}
 					exit={{ opacity: 0, y: 50 }}
