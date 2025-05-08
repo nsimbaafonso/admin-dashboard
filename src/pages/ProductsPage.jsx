@@ -52,6 +52,7 @@ const ProductsPage = () => {
 				<ProductsTable />
 				<AddButton onClick={() => setShowModal(true)} label="Adicionar Produto" />
 
+				{/* Modal que abre o formulário de cadastro de produtos */}
 				{showModal && (
 				<FullScreenModal title="Adicionar Produto" onClose={() => setShowModal(false)}>
 					{/* Formulário aqui */}
