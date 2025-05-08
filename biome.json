@@ -25,7 +25,8 @@
 		  "noUnusedTemplateLiteral": "off"
 		},
 		"a11y": {
-		  "noSvgWithoutTitle": "off"
+		  "noSvgWithoutTitle": "off",
+		  "useButtonType": "error"
 		},
 		"complexity": {
 		  "noForEach": "warn"

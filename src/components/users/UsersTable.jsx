@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Search } from "lucide-react";
+import { Edit, Search, Trash2 } from "lucide-react";
 
 const userData = [
-	{ id: 1, name: "John Doe", email: "john@example.com", role: "Cliente", status: "Ativo" },
-	{ id: 2, name: "Jane Smith", email: "jane@example.com", role: "Admin", status: "Ativo" },
-	{ id: 3, name: "Bob Johnson", email: "bob@example.com", role: "Cliente", status: "Inativo" },
-	{ id: 4, name: "Alice Brown", email: "alice@example.com", role: "Cliente", status: "Ativo" },
-	{ id: 5, name: "Charlie Wilson", email: "charlie@example.com", role: "Cliente", status: "Ativo" },
+	{ id: 1, name: "John Doe", email: "john@example.com", status: "Ativo" },
+	{ id: 2, name: "Jane Smith", email: "jane@example.com", status: "Ativo" },
+	{ id: 3, name: "Bob Johnson", email: "bob@example.com", status: "Inativo" },
+	{ id: 4, name: "Alice Brown", email: "alice@example.com", status: "Ativo" },
+	{ id: 5, name: "Charlie Wilson", email: "charlie@example.com", status: "Ativo" },
 ];
 
 const UsersTable = () => {
@@ -53,9 +53,6 @@ const UsersTable = () => {
 							</th>
 							<th className='px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider'>
 								Email
-							</th>
-							<th className='px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider'>
-                                Função
 							</th>
 							<th className='px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider'>
 								Status
@@ -109,8 +106,12 @@ const UsersTable = () => {
 								</td>
 
 								<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>
-									<button className='text-indigo-400 hover:text-indigo-300 mr-2'>Edit</button>
-									<button className='text-red-400 hover:text-red-300'>Delete</button>
+								<button className='text-indigo-400 hover:text-indigo-300 mr-2'>
+										<Edit  size={18} />
+									</button>
+									<button className='text-red-400 hover:text-red-300'>
+										<Trash2 size={18} />
+									</button>
 								</td>
 							</motion.tr>
 						))}
