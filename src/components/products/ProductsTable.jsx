@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { Edit, Search, Trash2, Info, CheckCircle } from 'lucide-react'
 import { useState } from 'react'
 import Modal from '../../components/common/Modal'
+import EditProductForm from '../../components/forms/EditProductForm'
 
 // Declara uma constante chamada PRODUCT_DATA que armazena uma lista (array) de objetos.
 const PRODUCT_DATA = [
@@ -176,6 +177,14 @@ const ProductsTable = () => {
                   <button
                     type="button"
                     className="text-indigo-400  cursor-pointer hover:text-indigo-300 mr-2"
+                    onClick={() =>
+                      openModal({
+                        title: 'Editar Produto',
+                        content: (
+                          <EditProductForm />
+                        ),
+                      })
+                    }
                   >
                     <Edit size={18} />
                   </button>
@@ -190,78 +199,12 @@ const ProductsTable = () => {
             ))}
           </tbody>
         </table>
+              
 
-        <div className="p-8 space-y-4">
-          <div className="flex gap-4">
-            <button
-              type="button"
-              className="px-4 py-2 cursor-pointer bg-blue-600 text-white rounded-xl hover:bg-blue-700"
-              onClick={() =>
-                openModal({
-                  title: 'Informação Importante',
-                  content: (
-                    <div className="space-y-4">
-                      <div className="flex items-center gap-2">
-                        <Info className="text-blue-500" />
-                        <p>Este é um aviso importante sobre sua conta.</p>
-                      </div>
-                      <button
-                        type="button"
-                        className="px-4 py-2 cursor-pointer bg-blue-600 text-white rounded hover:bg-blue-700"
-                        onClick={closeModal}
-                      >
-                        Entendi
-                      </button>
-                    </div>
-                  ),
-                })
-              }
-            >
-              Abrir Modal 1
-            </button>
-
-            <button
-              type="button"
-              className="px-4 py-2 cursor-pointer bg-green-600 text-white rounded-xl hover:bg-green-700"
-              onClick={() =>
-                openModal({
-                  title: 'Ação Concluída',
-                  content: (
-                    <div className="space-y-4">
-                      <div className="flex items-center gap-2">
-                        <CheckCircle className="text-green-500" />
-                        <p>Parabéns! Sua tarefa foi concluída com sucesso.</p>
-                      </div>
-                      <div className="flex gap-2">
-                        <button
-                          type="button"
-                          className="px-4 py-2 cursor-pointer bg-gray-200 rounded hover:bg-gray-300"
-                          onClick={closeModal}
-                        >
-                          Fechar
-                        </button>
-                        <button
-                          type="button"
-                          className="px-4 py-2 cursor-pointer bg-green-600 text-white rounded hover:bg-green-700"
-                          onClick={() => alert('Ação extra!')}
-                        >
-                          Ver detalhes
-                        </button>
-                      </div>
-                    </div>
-                  ),
-                })
-              }
-            >
-              Abrir Modal 2
-            </button>
-          </div>
-
-          <Modal isOpen={!!modalData} onClose={closeModal}>
-            <h2 className="text-xl font-semibold mb-4">{modalData?.title}</h2>
-            {modalData?.content}
-          </Modal>
-        </div>
+        <Modal isOpen={!!modalData} onClose={closeModal}>
+          <h2 className="text-xl font-semibold mb-4">{modalData?.title}</h2>
+          {modalData?.content}
+        </Modal>
       </div>
     </motion.div>
   )
