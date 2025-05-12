@@ -18,7 +18,7 @@ const AddProductForm = () => {
 	};
 
   return (
-    <form onSubmit={(e) => e.preventDefault()}>
+    <form onSubmit={(e) => e.preventDefault()} enctype="multipart/form-data">
 		{/* Linha com dois inputs */}
 		<div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
             <div>
