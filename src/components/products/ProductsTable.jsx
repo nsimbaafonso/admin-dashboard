@@ -3,6 +3,7 @@ import { Edit, Search, Trash2, Info, CheckCircle } from 'lucide-react'
 import { useState } from 'react'
 import Modal from '../../components/common/Modal'
 import EditProductForm from '../../components/forms/EditProductForm'
+import DeleteProductForm from '../../components/forms/DeleteProductForm'
 
 // Declara uma constante chamada PRODUCT_DATA que armazena uma lista (array) de objetos.
 const PRODUCT_DATA = [
@@ -98,7 +99,7 @@ const ProductsTable = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.2 }}
     >
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex justify-between flex-wrap items-center mb-6">
         <h2 className="text-xl font-semibold text-gray-100">
           Lista de Produtos
         </h2>
@@ -191,6 +192,14 @@ const ProductsTable = () => {
                   <button
                     type="button"
                     className="text-red-400  cursor-pointer hover:text-red-300"
+                    onClick={() =>
+                      openModal({
+                        title: 'Eliminar Produto',
+                        content: (
+                          <DeleteProductForm />
+                        ),
+                      })
+                    }
                   >
                     <Trash2 size={18} />
                   </button>
