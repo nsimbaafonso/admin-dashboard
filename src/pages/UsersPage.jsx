@@ -10,6 +10,7 @@ import UsersTable from '../components/users/UsersTable'
 import UserGrowthChart from '../components/users/UserGrowthChart'
 import UserActivityHeatmap from '../components/users/UserActivityHeatmap'
 import UserDemographicsChart from '../components/users/UserDemographicsChart'
+import AddUserForm  from "../components/forms/AddUserForm";
 
 const userStats = {
   totalUsers: 152845,
@@ -77,103 +78,9 @@ const UsersPage = () => {
 
         {/* Modal que abre o formulário de cadastro de clientes */}
         {showModal && (
-          <FullScreenModal
-            title="Adicionar Cliente"
-            onClose={() => setShowModal(false)}
-          >
+          <FullScreenModal title="Adicionar Cliente" onClose={() => setShowModal(false)}>
             {/* Formulário aqui */}
-            <form onSubmit={e => e.preventDefault()}>
-              {/* Linha com dois inputs */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
-                <div>
-                  <label
-                    htmlFor="nome"
-                    className="block text-sm font-medium text-gray-100 mb-1"
-                  >
-                    Nome
-                  </label>
-                  <input
-                    type="text"
-                    id="nome"
-                    placeholder="Digite o nome do cliente"
-                    required
-                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-gray-100 mb-1"
-                  >
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    placeholder="exemplo@gmail.com"
-                    required
-                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                  />
-                </div>
-              </div>
-
-              {/* Select em outra linha */}
-              <div className="mb-6">
-                <label
-                  htmlFor="categoria"
-                  className="block text-sm font-medium text-gray-100 mb-1"
-                >
-                  Status
-                </label>
-                <select
-                  required
-                  id="categoria"
-                  className="w-full border border-gray-300  rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                >
-                  <option value="" selected disabled>
-                    Selecione um Status
-                  </option>
-                  <option value="Ativo" className="text-gray-900">
-				  		Ativo
-                  </option>
-				  <option value="Inativo" className="text-gray-900">
-				  		Inativo
-                  </option>
-                </select>
-              </div>
-
-			  <div className='mb-6'>
-                  <label
-                    htmlFor="imagem"
-                    className="block text-sm font-medium text-gray-100 mb-1"
-                  >
-                    Imagem do Usuário
-                  </label>
-                  <input
-                    type="file"
-                    id="imagem"
-                    required
-                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                  />
-                </div>
-
-              {/* Botão de envio */}
-              <div className="flex justify-between gap-2">
-                <button
-                  type="reset"
-                  className="w-full cursor-pointer bg-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-400 transition"
-                >
-                  Limpar
-                </button>
-                <button
-                  type="submit"
-                  className="w-full  cursor-pointer bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700 transition"
-                >
-                  Adicionar Cliente
-                </button>
-              </div>
-            </form>
+            <AddUserForm />
           </FullScreenModal>
         )}
 
