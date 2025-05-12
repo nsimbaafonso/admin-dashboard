@@ -28,7 +28,7 @@ export default function RichText({ value, onChange }) {
 
       // Configurações do TinyMCE
       init={{
-        height: 300,          // Altura do editor em pixels
+        height: 150,          // Altura do editor em pixels
         menubar: false,       // Oculta a barra de menu superior
 
         // Plugins ativos no editor (extensões de funcionalidade)
