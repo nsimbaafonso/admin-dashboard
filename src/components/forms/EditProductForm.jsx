@@ -56,15 +56,30 @@ const EditProductForm = () => {
 				</select>
 			</div>
 
-			<div className="mb-6">
+			<div className="mb-4">
 				<label htmlFor="descricao" className="block text-sm font-medium text-gray-100 mb-1">
 				    Descrição do Produto
 				</label>
                 <textarea name="descricao" id="descricao" 
-                className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                cols="10" rows="3" placeholder="Sua descrição..." required>
+                className="w-full border border-gray-300 overflow-y-auto resize-none rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                cols="10" rows="2" placeholder="Sua descrição..." required>
                 </textarea>
       		</div>
+
+			<div className='mb-3'>
+				<label
+					htmlFor="imagem"
+					className="block text-sm font-medium text-gray-100 mb-1"
+				>
+					Imagem do Produto
+				</label>
+				<input
+					type="file"
+					id="imagem"
+					required
+					className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+				/>
+           </div>
 
 			{/* Botão de envio */}
 			<div className="flex justify-between gap-2">
