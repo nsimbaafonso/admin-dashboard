@@ -22,8 +22,6 @@ const userStats = {
 const UsersPage = () => {
   useDocumentTitle('Clientes | Dashboard')
 
-  useDocumentTitle('Produtos | Dashboard')
-
   const [showModal, setShowModal] = useState(false)
 
   const handleSubmit = e => {
