@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Edit, Search, Trash2 } from "lucide-react";
+import Modal from '../../components/common/Modal'
+import EditUserForm from '../../components/forms/EditUserForm'
+import DeleteUserForm from '../../components/forms/DeleteUserForm'
 
 const userData = [
 	{ id: 1, name: "John Doe", email: "john@example.com", status: "Ativo" },
@@ -22,6 +25,20 @@ const UsersTable = () => {
 		);
 		setFilteredUsers(filtered);
 	};
+
+	// Hook useState para armazenar os dados do modal (título e conteúdo)
+	// Começa como "null", ou seja, o modal está fechado e sem conteúdo
+	const [modalData, setModalData] = useState(null)
+
+	// Função para abrir o modal com título e conteúdo específicos
+	// Recebe um objeto com 'title' e 'content', e salva isso no estado modalData
+	const openModal = ({ title, content }) => {
+		setModalData({ title, content })
+	}
+
+	// Função para fechar o modal
+	// Simplesmente define modalData como null, o que faz com que o modal deixe de ser renderizado
+	const closeModal = () => setModalData(null)
 
 	return (
 		<motion.div
@@ -87,11 +104,11 @@ const UsersTable = () => {
 								<td className='px-6 py-4 whitespace-nowrap'>
 									<div className='text-sm text-gray-300'>{user.email}</div>
 								</td>
-								
+
 								<td className='px-6 py-4 whitespace-nowrap'>
 									<span
 										className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
-											user.status === "Active"
+											user.status === "Ativo"
 												? "bg-green-800 text-green-100"
 												: "bg-red-800 text-red-100"
 										}`}
@@ -101,10 +118,28 @@ const UsersTable = () => {
 								</td>
 
 								<td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>
-								<button className='text-indigo-400 hover:text-indigo-300 mr-2'>
+									<button className='text-indigo-400 cursor-pointer hover:text-indigo-300 mr-2'
+									onClick={() =>
+										openModal({
+											title: 'Editar Cliente',
+											content: (
+											<EditUserForm />
+											),
+										})
+									}
+									>
 										<Edit  size={18} />
 									</button>
-									<button className='text-red-400 hover:text-red-300'>
+									<button className='text-red-400 cursor-pointer hover:text-red-300'
+									onClick={() =>
+										openModal({
+											title: 'Eliminar Cliente',
+											content: (
+											<DeleteUserForm />
+											),
+										})
+									}
+									>
 										<Trash2 size={18} />
 									</button>
 								</td>
@@ -112,6 +147,11 @@ const UsersTable = () => {
 						))}
 					</tbody>
 				</table>
+
+				<Modal isOpen={!!modalData} onClose={closeModal}>
+					<h2 className="text-xl font-semibold mb-4">{modalData?.title}</h2>
+					{modalData?.content}
+				</Modal>
 			</div>
 		</motion.div>
 	);
