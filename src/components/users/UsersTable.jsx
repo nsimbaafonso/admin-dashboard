@@ -30,7 +30,7 @@ const UsersTable = () => {
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ delay: 0.2 }}
 		>
-			<div className='flex justify-between items-center mb-6'>
+			<div className='flex justify-between flex-wrap items-center mb-6'>
 				<h2 className='text-xl font-semibold text-gray-100'>Clientes</h2>
 				<div className='relative'>
 					<input
@@ -57,7 +57,7 @@ const UsersTable = () => {
 							<th className='px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider'>
 								Status
 							</th>
-							<th className='px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider'>
+							<th  className='px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider'>
 								Ações
 							</th>
 						</tr>
@@ -87,12 +87,7 @@ const UsersTable = () => {
 								<td className='px-6 py-4 whitespace-nowrap'>
 									<div className='text-sm text-gray-300'>{user.email}</div>
 								</td>
-								<td className='px-6 py-4 whitespace-nowrap'>
-									<span className='px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-800 text-blue-100'>
-										{user.role}
-									</span>
-								</td>
-
+								
 								<td className='px-6 py-4 whitespace-nowrap'>
 									<span
 										className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
