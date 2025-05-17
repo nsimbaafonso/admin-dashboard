@@ -91,7 +91,7 @@ const EditProductForm = () => {
 				<button type="submit"
 					className="w-full  cursor-pointer bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700 transition"
 				>
-					Adicionar Produto
+					Editar Produto
 				</button>
 			</div>
 	    </form>
